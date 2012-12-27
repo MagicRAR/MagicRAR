@@ -1,0 +1,61 @@
+0
+Kaspersky Anti-Virus
+AVP32.EXE
+
+/s
+Dr. Solomon's FindVirus
+WFINDV32.EXE
+
+*.*
+F-PROT
+FPROT.EXE
+
+*.* /NOBOOT /NOMEM /LIST /REPORT
+IBM AntiVirus for Windows 95/98/ME
+IBMAVSP.EXE
+
+-nlog -nmbr *.*
+IBM AntiVirus for Windows NT/2000/XP
+IBMASN.EXE
+
+-nlog -nmbr *.* 
+Integrity Master
+IM.EXE
+
+/N /UN /B /VL
+McAfee Virus Scan for Windows 95/98/ME
+SCAN95.EXE
+
+*.* /autoscan /nosplash
+McAfee Virus Scan for Windows NT/2000/XP
+SCAN32.EXE
+
+/autoscan /nosplash
+Norman Virus Control
+NVCC.EXE
+
+/S
+Norton AntiVirus for Windows 95/98/ME
+NAVW32.EXE
+
+*.* /s
+Norton AntiVirus for Windows NT
+NAVWNT.EXE
+
+*.* /s
+Norton AntiVirus for Windows NT/2000
+NAVNT.EXE
+
+*.* /s
+Norton AntiVirus for Windows NT/2000/XP
+N32SCANW.EXE
+
+*.* /s
+ThunderBYTE Anti Virus for Windows 95/98/ME
+TBSCAN.EXE
+
+*.* lo nb nm
+ThunderBYTE Anti Virus for Windows NT/2000/XP
+TBAVW32.EXE
+
+*.* lo nb nm
