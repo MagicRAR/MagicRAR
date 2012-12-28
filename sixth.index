@@ -5,21 +5,18 @@ sys=mConsoleWrapper.exe
 
 [pack 3]
 thirdparty=true
-files=rar
 target=$TARGETDIR$\Plug-Ins\ZTVEX
 register=$TARGETDIR$\Plug-Ins\ZTVEX\mTVEx.dll
 title=RAR Compression Plug-In
 
 [pack 2]
 thirdparty=true
-files=ace
 target=$TARGETDIR$\Plug-Ins\ZTVEX
 register=$TARGETDIR$\Plug-Ins\ZTVEX\mTVEx.dll
 title=ACE Compression Plug-In
 
 [pack 1]
 thirdparty=true
-files=sit
 target=$TARGETDIR$\Plug-Ins\ALADDIN
 register=$TARGETDIR$\Plug-Ins\ALADDIN\mSITPlug.dll
 title=SIT Plug-In
