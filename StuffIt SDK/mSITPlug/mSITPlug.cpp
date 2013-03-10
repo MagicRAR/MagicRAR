@@ -1094,10 +1094,77 @@ __declspec(dllexport) int WINAPI GetArchiveInfo(
 	return itemCount;
 }
 
+__declspec(dllexport) int WINAPI GetArchiveSizeEx(
+												const char* archive, 
+												bool silent,
+												int& names, 
+												int& pass, 
+												int& datetimes, 
+												int& sizes, 
+												int& compsizes)
+{
+	// clear string lists
+	itemCount = 0;
+	Names.erase(0, Names.length());
+	Pass.erase(0, Pass.length());
+	DateTimes.erase(0, DateTimes.length());
+	Sizes.erase(0, Sizes.length());
+	CompSizes.erase(0, CompSizes.length());
+    // custom reader that returns only file information while scanning
+	un::auto_ptr<app::unstuff::Reader> reader(0);
+	reader.reset(new app::unstuff::MyReader);
+	reader->open(archive);
+	reader->scan();
+	// delete last "empty" items
+	if (Names.length() != 0) 
+	{
+		Names.erase(Names.length() -1, 1);
+		if (Pass.length() != 0)
+		{
+			Pass.erase(Pass.length() -1, 1);
+		}
+		DateTimes.erase(DateTimes.length() -1, 1);
+		Sizes.erase(Sizes.length() -1, 1);
+		CompSizes.erase(CompSizes.length() -1, 1);
+	}
+	// return properly formatted lists
+	names = Names.length() +1;
+	pass = Pass.length() +1;
+	datetimes = DateTimes.length() +1;
+	sizes = Sizes.length() +1;
+	compsizes = CompSizes.length() +1;
+	reader->close();
+	return itemCount;
+}
+
+__declspec(dllexport) void WINAPI GetArchiveInfoEx(
+												char* names, 
+												char* pass, 
+												char* datetimes, 
+												char* sizes, 
+												char* compsizes)
+{
+	// return properly formatted lists
+	strcpy(names, Names.c_str());
+	FixUpPath(names);
+	strcpy(pass, Pass.c_str());
+	FixUpPath(pass);
+	strcpy(datetimes, DateTimes.c_str());
+	strcpy(sizes, Sizes.c_str());
+	strcpy(compsizes, CompSizes.c_str());
+}
+
 __declspec(dllexport) void WINAPI GetArchiveError(
 												 char** error)
 {
 	*error = NULL;
+}
+
+__declspec(dllexport) int WINAPI GetArchiveErrorEx(
+												 char* error)
+{
+	error = NULL;
+	return 0;
 }
 
 __declspec(dllexport) void WINAPI ShowPlugInAbout()

@@ -1,6 +1,9 @@
 EXPORTS
   GetArchiveInfo
+  GetArchiveSizeEx
+  GetArchiveInfoEx
   GetArchiveError
+  GetArchiveErrorEx
   ShowPlugInAbout
   CodexStandardFunction
   CodexRegisterPlugIn
