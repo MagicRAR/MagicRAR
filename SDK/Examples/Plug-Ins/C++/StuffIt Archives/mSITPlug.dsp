@@ -163,7 +163,7 @@ SOURCE="..\win32\bin\stuffit5.engine-5.1.lib"
 # End Source File
 # Begin Source File
 
-SOURCE="C:\Program Files\Microsoft Visual Studio\Vc98\Lib\Shlwapi.lib"
+SOURCE=".\Shlwapi.lib"
 # End Source File
 # End Target
 # End Project
